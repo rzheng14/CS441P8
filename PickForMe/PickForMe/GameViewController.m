@@ -9,24 +9,15 @@
 #import "GameViewController.h"
 #import "GameScene.h"
 
+#include <stdlib.h>
+
 @implementation GameViewController
 
-
+int count = 4;
+NSString *string;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
-    // Load the SKScene from 'GameScene.sks'
-    GameScene *scene = (GameScene *)[SKScene nodeWithFileNamed:@"GameScene"];
-    
-    // Set the scale mode to scale to fit the window
-    scene.scaleMode = SKSceneScaleModeAspectFill;
-    
-    SKView *skView = (SKView *)self.view;
-    
-    // Present the scene
-    [skView presentScene:scene];
-   
 }
 
 - (BOOL)shouldAutorotate {
@@ -43,6 +34,35 @@
 
 - (BOOL)prefersStatusBarHidden {
     return YES;
+}
+
+- (IBAction)spin:(id)sender {
+    int r = arc4random_uniform(count);
+  if(r == 0) {
+    [_label setText:_option1.text];
+  }
+  if(r == 1) {
+    [_label setText:_option2.text];
+  }
+  if(r == 2) {
+    [_label setText:_option3.text];
+  }
+  if(r == 3) {
+    [_label setText:_option4.text];
+  }
+}
+
+- (BOOL)textField:(UITextField *)_Entry shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
+{
+  NSString *newString = [_Entry.text stringByReplacingCharactersInRange:range withString:string];
+  [self updateTextLabelsWithText: newString];
+  count++;
+  return YES;
+}
+
+-(void)updateTextLabelsWithText:(NSString *)string
+{
+  [_label setText:string];
 }
 
 @end

@@ -8,10 +8,16 @@
 
 #import <UIKit/UIKit.h>
 #import <SpriteKit/SpriteKit.h>
-#import <GameplayKit/GameplayKit.h>
-
 
 @interface GameViewController : UIViewController
+@property (nonatomic, strong) IBOutlet UITextField *Entry;
+@property (nonatomic, strong) IBOutlet UIButton *spin;
+@property (nonatomic, strong) IBOutlet UILabel *label;
+@property (nonatomic, strong) IBOutlet UILabel *option1;
+@property (nonatomic, strong) IBOutlet UILabel *option2;
+@property (nonatomic, strong) IBOutlet UILabel *option3;
+@property (nonatomic, strong) IBOutlet UILabel *option4;
+
 
 
 

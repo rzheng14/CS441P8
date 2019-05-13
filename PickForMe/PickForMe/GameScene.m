@@ -19,8 +19,6 @@
     // Get label node from scene and store it for use later
 
     
-    CGFloat w = (self.size.width + self.size.height) * 0.05;
-    
     // Create shape node to use during mouse interaction
 }
 
