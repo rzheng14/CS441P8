@@ -11,6 +11,8 @@
 
 @implementation GameViewController
 
+
+
 - (void)viewDidLoad {
     [super viewDidLoad];
 
@@ -24,9 +26,7 @@
     
     // Present the scene
     [skView presentScene:scene];
-    
-    skView.showsFPS = YES;
-    skView.showsNodeCount = YES;
+   
 }
 
 - (BOOL)shouldAutorotate {
